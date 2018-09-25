@@ -1,0 +1,56 @@
+<div class="uk-container">
+  <div class="hdr">
+    <h2>Типы сайтов</h2>
+    <button class="uk-button uk-button-primary btn-add" (click)="new()"><span uk-icon="icon: plus"></span></button>
+  </div>
+  <div style="clear:both;"></div>
+  <table class="uk-table uk-table-striped uk-table-small uk-table-hover">
+    <tr *ngFor="let i of types">
+      <td>{{i.name}}</td>
+      <td>{{strType(i)}}</td>
+      <td class="td-btns">
+        <button class="uk-button uk-button-text uk-button-small bt-edit" (click)="edit(i)"><span uk-icon="icon: pencil"></span></button>
+        &nbsp;&nbsp;&nbsp;
+        <button class="uk-button uk-button-text uk-button-small bt-del" (click)="del(i)"><span uk-icon="icon: trash"></span></button>
+      </td>
+    </tr>
+  </table>
+
+  <div id="dlg-type-edit" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+      <button class="uk-modal-close-outside" type="button" uk-close></button>
+      <h2 class="uk-modal-title">Тип сайта</h2>
+
+      <input [(ngModel)]="curType['name']" class="uk-input" type="text" placeholder="название типа сайта ...">
+      <br />&nbsp;<br />
+      <label><input class="uk-radio" type="radio" name="radio1" [(ngModel)]="curType['gen_type']" value="0"> частота генерации</label>
+      <select [(ngModel)]="curType['period']" [ngClass]="{'invis': +curType['gen_type'] == 1}" class="uk-select">
+        <option value="0">НЕДЕЛЯ</option>
+        <option value="1">МЕСЯЦ</option>
+        <option value="2">КВАРТАЛ</option>
+      </select>
+      <label><input class="uk-radio" type="radio" name="radio1" [(ngModel)]="curType['gen_type']" value="1"> статический</label>
+      <input [(ngModel)]="curType['psw']" [ngClass]="{'invis': +curType['gen_type'] == 0}" class="uk-input" type="text" placeholder="пароль ...">
+
+      <p class="uk-text-right">
+        <button (click)="doEdit()" class="uk-button uk-button-primary" type="button">сохранить</button>
+      </p>
+    </div>
+  </div>
+
+  <div id="dlg-type-del" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+      <button class="uk-modal-close-outside" type="button" uk-close></button>
+      <h2 class="uk-modal-title">Тип сайта</h2>
+      
+      <input value="{{curType['name']}}" class="uk-input" type="text" readonly="true">
+      <br />&nbsp;
+      <input value="{{strType(curType)}}" class="uk-input" type="text" readonly="true">
+
+      <p class="uk-text-right">
+        <button (click)="doDel()" class="uk-button uk-button-danger" type="button">да, удалить</button>
+      </p>
+    </div>
+  </div>
+
+</div>

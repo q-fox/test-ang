@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { UsersComponent } from './users/users.component';
 import { SitesComponent } from './sites/sites.component';
+import { TypesComponent } from './types/types.component';
 
 import { AppService } from './app.service';
 
 const routes = [
   { path: '', component: IndexComponent },
   { path: 'users', component: UsersComponent },
-  { path: 'sites', component: SitesComponent }
+  { path: 'sites', component: SitesComponent },
+  { path: 'types', component: TypesComponent }
 ];
 
 @NgModule({
@@ -21,7 +23,8 @@ const routes = [
     AppComponent,
     IndexComponent,
     UsersComponent,
-    SitesComponent
+    SitesComponent,
+    TypesComponent
   ],
   imports: [
     BrowserModule,

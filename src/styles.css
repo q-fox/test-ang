@@ -6,3 +6,4 @@ h2 { float: left; margin: 0; }
 .bt-del { color: red; }
 td button { visibility: hidden; }
 tr:hover button { visibility: visible; }
+.invis { visibility: hidden; }

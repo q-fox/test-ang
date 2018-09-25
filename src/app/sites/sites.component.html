@@ -23,11 +23,11 @@
       <button class="uk-modal-close-outside" type="button" uk-close></button>
       <h2 class="uk-modal-title">Сайт</h2>
 
-      <input [(ngModel)]="curSite.name" class="uk-input" type="text" placeholder="название сайта ...">
+      <input [(ngModel)]="curSite['name']" class="uk-input" type="text" placeholder="название сайта ...">
       <br />&nbsp;
-      <input [(ngModel)]="curSite.url" class="uk-input" type="text" placeholder="url ...">
+      <input [(ngModel)]="curSite['url']" class="uk-input" type="text" placeholder="url ...">
       <br />&nbsp;
-      <input [(ngModel)]="curSite.token" class="uk-input" type="text" placeholder="token ...">
+      <input [(ngModel)]="curSite['token']" class="uk-input" type="text" placeholder="token ...">
 
       <p class="uk-text-right">
         <button (click)="doEdit()" class="uk-button uk-button-primary" type="button">сохранить</button>
@@ -40,11 +40,11 @@
       <button class="uk-modal-close-outside" type="button" uk-close></button>
       <h2 class="uk-modal-title">Сайт</h2>
       
-      <input [(ngModel)]="curSite.name" class="uk-input" type="text" readonly="true">
+      <input value="{{curSite['name']}}" class="uk-input" type="text" readonly="true">
       <br />&nbsp;
-      <input [(ngModel)]="curSite.url" class="uk-input" type="text" readonly="true">
+      <input value="{{curSite['url']}}" class="uk-input" type="text" readonly="true">
       <br />&nbsp;
-      <input [(ngModel)]="curSite.token" class="uk-input" type="text" readonly="true">
+      <input value="{{curSite['token']}}" class="uk-input" type="text" readonly="true">
 
       <p class="uk-text-right">
         <button (click)="doDel()" class="uk-button uk-button-danger" type="button">да, удалить</button>

@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AppService {
-  rnd(min,max) {
+  private rnd(min,max) {
     return Math.floor(Math.random()*(max-min+1)+min);
   }
 // ###################################################################################################################  
@@ -28,7 +28,7 @@ export class AppService {
       console.log('AppService: insert user id='+ u.id);
     }else{ 
       let ndx = this.users.findIndex(i => { return i.id==u.id });
-      this.users[ndx] = {...u};
+      this.users[ndx] = { ...u };
       console.log('AppService: update user where id='+ u.id);
     }
   }
@@ -55,19 +55,33 @@ export class AppService {
       console.log('AppService: insert site id='+ s.id);
     }else{ 
       let ndx = this.sites.findIndex(i => { return i.id==s.id });
-      this.sites[ndx] = {...s};
+      this.sites[ndx] = { ...s };
       console.log('AppService: update site where id='+ s.id);
     }
   }
 // ###################################################################################################################  
-  periods = ["НЕДЕЛЯ","МЕСЯЦ","КВАРТАЛ"];
-// ###################################################################################################################  
-  stypes = [
+  types = [
     { id: "1", name: "тип сайта 1", gen_type: "0", period: "0", psw: ""},
     { id: "2", name: "тип сайта 2", gen_type: "0", period: "1", psw: ""},
     { id: "3", name: "тип сайта 3", gen_type: "1", period: "0", psw: "password 3"},
     { id: "4", name: "тип сайта 4", gen_type: "0", period: "2", psw: ""},
     { id: "5", name: "тип сайта 5", gen_type: "1", period: "0", psw: "password 5"}
   ];  
-  
+
+  delType(id){
+    this.types = this.types.filter(i => { return i.id!=id });
+    console.log('AppService: del type where id='+id);
+  }
+
+  editType(t){
+    if(+t.id==0){ 
+      t.id = ''+this.rnd(100,10000);
+      this.types.push(t);
+      console.log('AppService: insert type id='+ t.id);
+    }else{ 
+      let ndx = this.types.findIndex(i => { return i.id==t.id });
+      this.types[ndx] = { ...t };
+      console.log('AppService: update type where id='+ t.id);
+    }
+  }  
 }
