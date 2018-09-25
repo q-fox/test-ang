@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>TEST Angular 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css" />
+
+  <style type="text/css">
+		.hdr { margin: 1em 0; }
+    h2 { float: left; margin: 0; }
+    .btn-add { float: right;  }
+    .td-btns { text-align: right; }
+    .bt-edit { color: green; }
+    .bt-del { color: red; }
+    td button { visibility: hidden; }
+    tr:hover button { visibility: visible; }
+  </style>
+</head>
+<body>
+
+<nav class="uk-navbar-container" uk-navbar>
+  <div class="uk-navbar-left">
+    <ul class="uk-navbar-nav">
+      <li><a href="index.html">&nbsp;<span uk-icon="icon: cog; ratio:2"></span>&nbsp;TEST Angular 2</a></li>
+    </ul>
+  </div>
+  <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav">
+      <li><a href="users.html">&nbsp;<span uk-icon="icon: users" ratio="2"></span>&nbsp;Пользователи</a></li>
+      <li><a href="sites.html">&nbsp;<span uk-icon="icon: world; ratio:2"></span>&nbsp;Сайты</a></li>
+      <li><a href="types.html">&nbsp;<span uk-icon="icon: thumbnails; ratio:2"></span>&nbsp;Типы сайтов</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="uk-container">
+	<h3 style="margin-top:3em;">Тестовое приложение на Angular 2: <a href="types.html" target="blank">&nbsp;<span uk-icon="icon: github; ratio:2"></span>&nbsp;source code</a></h3>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
+
+</body>
+</html>

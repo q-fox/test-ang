@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>sites</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css" />
+
+  <style type="text/css">
+		.hdr { margin: 1em 0; }
+    h2 { float: left; margin: 0; }
+    .btn-add { float: right;  }
+    .td-btns { text-align: right; }
+    .bt-edit { color: green; }
+    .bt-del { color: red; }
+    td button { visibility: hidden; }
+    tr:hover button { visibility: visible; }
+  </style>
+</head>
+<body>
+
+<nav class="uk-navbar-container" uk-navbar>
+  <div class="uk-navbar-left">
+    <ul class="uk-navbar-nav">
+      <li><a href="index.html">&nbsp;<span uk-icon="icon: cog; ratio:2"></span>&nbsp;TEST</a></li>
+    </ul>
+  </div>
+  <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav">
+      <li><a href="users.html">&nbsp;<span uk-icon="icon: users" ratio="2"></span>&nbsp;Пользователи</a></li>
+      <li><a href="sites.html">&nbsp;<span uk-icon="icon: world; ratio:2"></span>&nbsp;Сайты</a></li>
+      <li><a href="types.html">&nbsp;<span uk-icon="icon: thumbnails; ratio:2"></span>&nbsp;Типы сайтов</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="uk-container">
+  <div class="hdr">
+		<h2>Сайты</h2>
+		<button class="uk-button uk-button-primary btn-add" uk-toggle="target: #dlg-site-edit"><span uk-icon="icon: plus"></span></button>
+	</div>
+	<div style="clear:both;"></div>
+
+  <table class="uk-table uk-table-striped uk-table-small uk-table-hover">
+    <tr>
+      <td>название сайта 1</td>
+      <td>url 1</td>
+      <td>token 1</td>
+      <td class="td-btns">
+        <button class="uk-button uk-button-text uk-button-small bt-edit" uk-toggle="target: #dlg-site-edit"><span uk-icon="icon: pencil"></span></button>
+        &nbsp;&nbsp;&nbsp;
+        <button class="uk-button uk-button-text uk-button-small bt-del" uk-toggle="target: #dlg-site-del"><span uk-icon="icon: trash"></span></button>
+      </td>
+    </tr>
+    <tr>
+      <td>название сайта 2</td>
+      <td>url 2</td>
+      <td>token 2</td>
+      <td class="td-btns">
+        <button class="uk-button uk-button-text uk-button-small bt-edit" uk-toggle="target: #dlg-site-edit"><span uk-icon="icon: pencil"></span></button>
+        &nbsp;&nbsp;&nbsp;
+        <button class="uk-button uk-button-text uk-button-small bt-del" uk-toggle="target: #dlg-site-del"><span uk-icon="icon: trash"></span></button>
+      </td>
+    </tr>
+    <tr>
+      <td>название сайта 3</td>
+      <td>url 3</td>
+      <td>token 3</td>
+      <td class="td-btns">
+        <button class="uk-button uk-button-text uk-button-small bt-edit" uk-toggle="target: #dlg-site-edit"><span uk-icon="icon: pencil"></span></button>
+        &nbsp;&nbsp;&nbsp;
+        <button class="uk-button uk-button-text uk-button-small bt-del" uk-toggle="target: #dlg-site-del"><span uk-icon="icon: trash"></span></button>
+      </td>
+    </tr>
+  </table>
+
+  <div id="dlg-site-edit" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+      <h2 class="uk-modal-title">Сайт</h2>
+
+      <input class="uk-input" type="text" placeholder="название сайта ...">
+      <br />&nbsp;
+      <input class="uk-input" type="text" placeholder="url ...">
+      <br />&nbsp;
+      <input class="uk-input" type="text" placeholder="token ...">
+
+      <p class="uk-text-right">
+        <button class="uk-button uk-button-primary" type="button">сохранить</button>
+      </p>
+    </div>
+  </div>
+
+  <div id="dlg-site-del" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+      <h2 class="uk-modal-title">Сайт</h2>
+      
+      <input class="uk-input" type="text" value="название сайта 1" readonly="true">
+      <br />&nbsp;
+      <input class="uk-input" type="text" value="url 1" readonly="true">
+      <br />&nbsp;
+      <input class="uk-input" type="text" value="token 1" readonly="true">
+
+      <p class="uk-text-right">
+        <button class="uk-button uk-button-danger" type="button">да, удалить</button>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
+
+</body>
+</html>
