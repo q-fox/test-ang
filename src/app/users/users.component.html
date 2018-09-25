@@ -1,0 +1,50 @@
+<div class="uk-container">
+  <div class="hdr">
+    <h2>Пользователи</h2>
+    <button class="uk-button uk-button-primary btn-add" (click)="new()"><span uk-icon="icon: plus"></span></button>
+  </div>
+  <div style="clear:both;"></div>
+
+  <table class="uk-table uk-table-striped uk-table-small uk-table-hover">
+    <tr *ngFor="let i of users">
+      <td>{{i.name}}</td>
+      <td>{{i.email}}</td>
+      <td class="td-btns">
+        <button class="uk-button uk-button-text uk-button-small bt-edit" (click)="edit(i)"><span uk-icon="icon: pencil"></span></button>
+        &nbsp;&nbsp;&nbsp;
+        <button class="uk-button uk-button-text uk-button-small bt-del" (click)="del(i)"><span uk-icon="icon: trash"></span></button>
+      </td>
+    </tr>
+  </table>
+
+  <div id="dlg-user-edit" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+      <button class="uk-modal-close-outside" type="button" uk-close></button>
+      <h2 class="uk-modal-title">Пользователь</h2>
+
+      <input [(ngModel)]="curUser.name" class="uk-input" type="text" placeholder="имя пользователя ...">
+      <br />&nbsp;
+      <input [(ngModel)]="curUser.email" class="uk-input" type="text" placeholder="электронная почта ...">
+
+      <p class="uk-text-right">
+        <button (click)="doEdit()" class="uk-button uk-button-primary" type="button">сохранить</button>
+      </p>
+    </div>
+  </div>
+
+  <div id="dlg-user-del" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+      <button class="uk-modal-close-outside" type="button" uk-close></button>
+      <h2 class="uk-modal-title">Пользователь</h2>
+      
+      <input [(ngModel)]="curUser.name" class="uk-input" type="text" readonly="true">
+      <br />&nbsp;
+      <input [(ngModel)]="curUser.email" class="uk-input" type="text" readonly="true">
+
+      <p class="uk-text-right">
+        <button (click)="doDel()" class="uk-button uk-button-danger" type="button">да, удалить</button>
+      </p>
+    </div>
+  </div>
+
+</div>
